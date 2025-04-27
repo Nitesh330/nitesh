@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSC - Common Service Centre</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* 📌 Header */
+        .header {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* 🔍 Search Bar */
+        .search-box {
+            margin: 20px auto;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box input {
+            width: 60%;
+            padding: 10px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .search-box button {
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 5px;
+        }
+
+        .search-box button:hover {
+            background: #0056b3;
+        }
+
+        /* 🏛 CSC Services Section */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.5);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 6px 15px rgba(0, 123, 255, 0.8);
+        }
+
+        .service-card img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* 📱 Responsive */
+        @media (max-width: 768px) {
+            .service-card {
+                width: 100%;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+        }
+        .apply-btn {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .apply-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 📌 CSC Header -->
+        <div class="header">🛠 CSC - Common Service Centre</div>
+
+        <!-- 🔍 Search Box -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search CSC Services...">
+            <button onclick="searchServices()">Search</button>
+        </div>
+
+        <!-- 🏛 CSC Services -->
+        <div class="services" id="serviceList">
+            <div class="service-card">
+                <img src="c:\Users\Nitesh\Desktop\Main Program\all used logo\pan_logo-removebg-preview.png" alt="PAN Card" >
+                <h3>PAN Card Services</h3>
+                <p>Apply for New PAN & Update PAN.</p>
+                <a href="c:\Users\Nitesh\Desktop\Main Program\CSC All Link\Pan Link.html" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="service-card">
+                <img src="c:\Users\Nitesh\Desktop\Main Program\all used logo\adhar_logo-removebg-preview.png" alt="Aadhar Services" >
+                <h3>Aadhar Services</h3>
+                <p>Link, Update & Mask Aadhar Download.</p>
+                <a href="c:\Users\Nitesh\Desktop\Main Program\CSC All Link\Aadar link.html" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="service-card">
+                <img src="c:\Users\Nitesh\Desktop\Main Program\all used logo\pay.png" alt="Bill Payments">
+                <h3>Bill Payments</h3>
+                <p>Pay Electricity, Water, and House Tax.</p>
+                <a href="c:\Users\Nitesh\Desktop\Main Program\CSC All Link\Bill Payment link.html" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="service-card">
+                <img src="c:\Users\Nitesh\Desktop\Main Program\all used logo\images.png" alt="Banking">
+                <h3>Ayushman Card </h3>
+                <p>Apply for New Ayushman Card</p>
+                <a href="https://beneficiary.nha.gov.in/" class="apply-btn">Apply Now</a>
+              <!--  <p>Open Bank Accounts & Apply for Loans.</p> -->
+            </div>
+            <div class="service-card">
+                <img src="c:\Users\Nitesh\Desktop\Main Program\all used logo\rashan.png" alt="Insurance">
+                <h3>Ration Card </h3>
+                <p>Apply New Ration Card</p>
+                <a href="https://epds.haryanafood.gov.in/search-rc" class="apply-btn">Apply Now</a>
+              <!--  <p>Apply for Health, Life & Car Insurance.</p> -->
+            </div>
+            <div class="service-card">
+                <img src="c:\Users\Nitesh\Desktop\Main Program\all used logo\PP.png" alt="Education">
+                <h3>Parivar Pahechan Patar</h3>
+                <p>Apply for new Parivar Pahechan Patar.</p>
+                <a href="c:\Users\Nitesh\Desktop\Main Program\CSC All Link\ppp link.html" class="apply-btn">Apply Now</a>
+            </div>
+            <!--  -->
+            <div class="service-card">
+                <img src="c:\Users\Nitesh\Desktop\Main Program\all used logo\saral-logo.png" alt="Education">
+                <h3>🏛️ Caste Certificate (BC/OBC/SC/DSC/EWS)</h3>
+                <p>Apply for New Certificate.</p>
+                <a href="https://saralharyana.gov.in/login.do" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="service-card">
+                <img src=" c:\Users\Nitesh\Desktop\Main Program\all used logo\images__1_-removebg-preview.png"  alt="Education">
+                <h3>Voter Card</h3>
+                <p>Apply for new Voter Card.</p>
+                <a href="https://voters.eci.gov.in/" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="service-card">
+                <img src="c:\Users\Nitesh\Desktop\Main Program\all used logo\HR-removebg-preview.png " alt="Education">
+                <h3>Happy Card </h3>
+                <p>Apply for New Happy Card.</p>
+                <a href="https://ebooking.hrtransport.gov.in/#/ppp/apply/happy" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="service-card">
+                <img src="c:\Users\Nitesh\Desktop\Main Program\all used logo\images__5_-removebg-preview.png" alt="Education">
+                <h3>Meri Fasal Mera Byora</h3>
+                <p>Apply for New Registration.</p>
+                <a href="https://fasal.haryana.gov.in/" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="service-card">
+                <img src=" c:\Users\Nitesh\Desktop\Main Program\all used logo\images (4).jpg" alt="Registration">
+                <h3> E-Disha</h3>
+                <p>Verification of Certificate & Status of Application</p>
+                <a href="c:\Users\Nitesh\Desktop\Main Program\CSC All Link\E-Disha.html" class="apply-btn">Check Now</a>
+            </div>
+            <div class="service-card">
+                <img src="c:\Users\Nitesh\Desktop\Main Program\all used logo\images__6_-removebg-preview.png" alt="Registration">
+                <h3>Passport</h3>
+                <p>Apply for New Passport & Check Appointment Availablity.</p>
+                <a href="c:\Users\Nitesh\Desktop\Main Program\CSC All Link\Passport.html" class="apply-btn">Check Now</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function searchServices() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let serviceCards = document.querySelectorAll('.service-card');
+
+            serviceCards.forEach(card => {
+                let title = card.querySelector('h3').innerText.toLowerCase();
+                if (title.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Resources</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        /* Main Heading */
+        .resources-heading {
+            font-size: 28px;
+            color: #007bff;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* Underline Animation */
+        .resources-heading::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background-color: #00ffea;
+            transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+        }
+
+        .resources-heading:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Resource Box Container */
+        .resource-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        /* Individual Resource Card */
+        .resource-box {
+            background: white;
+            padding: 15px;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .resource-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .resource-box h3 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .resource-box p {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 class="resources-heading">✨ Available Resources ✨</h2>
+
+    <div class="resource-container">
+        <div class="resource-box">
+            <h3>📄 Study Materials</h3>
+            <p>Access notes, PDFs, and ebooks.</p>
+        </div>
+        <div class="resource-box">
+            <h3>🎥 Video Tutorials</h3>
+            <p>Watch online lectures and courses.</p>
+        </div>
+        <div class="resource-box">
+            <h3>💼 Job Portals</h3>
+            <p>Find the latest job updates and openings.</p>
+        </div>
+        <div class="resource-box">
+            <h3>📊 Skill Development</h3>
+            <p>Enhance your skills with online training.</p>
+        </div>
+    </div>
+
+</body>
+</html>

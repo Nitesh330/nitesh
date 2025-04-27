@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Facilities</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f5ff, #d9eaff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .box {
+            width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background: white;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(151, 249, 66, 0.763);
+        }
+
+        .box h3 {
+            color: #0056b3;
+        }
+
+        .box p {
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            background: #007bff;
+            color: white;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+        .section-heading {
+    font-size: 2.8em;
+    color: #2e7d32; /* Dark Green */
+    text-align: center;
+    margin: 60px 0 30px;
+    font-weight: 700;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section-heading::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background-color: #66bb6a;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+    </style>
+</head>
+<body>
+    <h2 class="section-heading">Our University Facilities</h2>
+
+    <div class="container">
+        <div class="box">
+            <h3>IGNOU</h3>
+            <p>Explore distance learning and online courses with IGNOU.</p>
+            <a href="#" class="btn">Visit IGNOU</a>
+        </div>
+        <div class="box">
+            <h3>KUK University</h3>
+            <p>Get the best education and resources from KUK University.</p>
+            <a href="#" class="btn">Visit KUK</a>
+        </div>
+        <div class="box">
+            <h3>GJU University</h3>
+            <p>Enhance your knowledge with quality education at GJU.</p>
+            <a href="#" class="btn">Visit GJU</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGNOU Assignment Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #f0f2f5;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease-in-out;
+        }
+        .container:hover {
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        .search-bar {
+            width: 80%;
+            max-width: 400px;
+            padding: 10px 15px;
+            border-radius: 25px;
+            border: 2px solid #333;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+            margin-bottom: 20px;
+        }
+        .search-bar:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+        .assignment {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .assignment img {
+            width: 50px;
+        }
+        .assignment-info {
+            flex: 1;
+            text-align: left;
+            margin-left: 15px;
+        }
+        .assignment-info h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+        .price {
+            font-weight: bold;
+            color: #ff4b2b;
+        }
+        .buy-btn {
+            background: linear-gradient(45deg, #007bff, #00c6ff);
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .buy-btn:hover {
+            background: linear-gradient(45deg, #0056b3, #008cff);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>📚 IGNOU Assignment Store</h1>
+        <p>Buy & Download IGNOU Assignments Easily</p>
+        
+        <input type="text" id="search" class="search-bar" onkeyup="searchPDF()" placeholder="Search Assignments...">
+        
+        <div id="assignmentList">
+            <div class="assignment">
+                <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF">
+                <div class="assignment-info">
+                    <h3>Assignment Name (Change Here)</h3>
+                    <p class="price">₹50</p>
+                </div>
+                <button class="buy-btn" onclick="makePayment()">Buy Now</button>
+            </div>
+            
+            <div class="assignment">
+                <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF">
+                <div class="assignment-info">
+                    <h3>Assignment Name (Change Here)</h3>
+                    <p class="price">₹50</p>
+                </div>
+                <button class="buy-btn" onclick="makePayment()">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function makePayment() {
+            let paymentSuccess = confirm("Proceed to Payment?");
+            if (paymentSuccess) {
+                alert("Payment Successful ✅\nYour download will start now.");
+                window.location.href = "files/sample.pdf"; // Change to actual file
+            }
+        }
+        
+        function searchPDF() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let assignments = document.querySelectorAll(".assignment");
+
+            assignments.forEach(assignment => {
+                let text = assignment.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    assignment.style.display = "flex";
+                } else {
+                    assignment.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

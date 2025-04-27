@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar with Toggle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #007bff;
+            padding: 15px 20px;
+            color: white;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 10px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Toggle Button */
+        .toggle-btn {
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            right: -250px;
+            top: 0;
+            width: 250px;
+            height: 100vh;
+            background: #333;
+            padding: 20px;
+            transition: 0.3s;
+            box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar.active {
+            right: 0;
+        }
+
+        .sidebar h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .close-btn {
+            font-size: 20px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            float: right;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    </nav>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <button class="menu-btn" onclick="toggleMenu()">⋮ Setting </button>
+        <ul class="dropdown-menu" id="dropdownMenu">
+        <h3>Our Services</h3>
+        <ul>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">SEO Optimization</a></li>
+            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            let sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("active");
+        }
+    </script>
+<div class="container">
+           
+  <!--  <img src=" c:\Users\Nitesh\Desktop\Main Program\all used logo\NND.jpg" style="height: 230px; width: 400px;">-->
+   </div>
+   <img src="c:\Users\Nitesh\Desktop\Main Program\all used logo\NND.jpg" alt="discription" loading="lazy">
+</body>
+</html>

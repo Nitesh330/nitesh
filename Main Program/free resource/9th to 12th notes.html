@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandWritten  Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .search-bar {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            margin: 0 10px;
+            border-radius: 5px;
+        }
+        .tab.active {
+            background: #0056b3;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .notes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .note {
+            width: 45%;
+            background: #eef;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Premium Notes</h1>
+        <input type="text" class="search-bar" placeholder="Search for Notes...">
+        
+        <div class="tabs">
+            <div class="tab active" onclick="showContent('hbse')">HBSE</div>
+            <div class="tab" onclick="showContent('cbse')">CBSE</div>
+        </div>
+        
+        <div id="hbse" class="content active">
+            <h2>HBSE Notes</h2>
+            <div class="notes">
+                <div class="note">Class 9 </div>
+                <div class="note">Class 10</div>
+                <div class="note">Class 11 </div>
+                <div class="note">Class 12 </div>
+            </div>
+        </div>
+        
+        <div id="cbse" class="content">
+            <h2>CBSE Notes</h2>
+            <div class="notes">
+                <div class="note">Class 9 </div>
+                <div class="note">Class 10 </div>
+                <div class="note">Class 11 </div>
+                <div class="note">Class 12 </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showContent(type) {
+            document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+            document.querySelector(`#${type}`).classList.add('active');
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelector(`.tab[onclick="showContent('${type}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
